@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <span class="game-info">
-      Level: {{ currentLevel }}
+      Уровень сложности: {{ currentLevel }}
       <br />
-      Round: {{ round }}
+      Раунд: {{ round }}
     </span>
     <Pie
       ref="pie"
@@ -13,12 +13,12 @@
       :onLose="handleLose"
     />
 
-    <button @click="handleOnStartClick" class="start-button">START</button>
+    <button @click="handleOnStartClick" class="start-button">НАЧАТЬ</button>
 
     <div>
-      <button @click="handleOnEasyClick" class="start-button">EASY</button>
-      <button @click="handleOnNormalClick" class="start-button">NORMAL</button>
-      <button @click="handleOnHardClick" class="start-button">HARD</button>
+      <button @click="handleOnEasyClick" class="start-button">ЛЕГКИЙ</button>
+      <button @click="handleOnNormalClick" class="start-button">СРЕДНИЙ</button>
+      <button @click="handleOnHardClick" class="start-button">ТЯЖЕЛЫЙ</button>
     </div>
   </div>
 </template>
@@ -41,13 +41,13 @@ export default {
     currentLevel: function () {
       switch (this.level) {
         case 1500:
-          return "Easy";
+          return "Легкий";
         case 1000:
-          return "Normal";
+          return "Средний";
         case 400:
-          return "Hard";
+          return "Тяжелый";
         default:
-          return "Easy";
+          return "Легкий";
       }
     },
   },
@@ -90,7 +90,7 @@ export default {
     },
 
     handleLose() {
-      alert("YOU LOSE MOTHERFAKA");
+      alert("Вы проиграли");
       this.round = 0
       this.$set(this.sequence, 'length', 0) 
     },

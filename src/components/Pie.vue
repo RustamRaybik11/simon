@@ -93,6 +93,7 @@ export default {
   height: 400px;
   border-radius: 100%;
   border-width: 10px;
+  background-color: black;
   border-color: black;
   border-style: solid;
 }
